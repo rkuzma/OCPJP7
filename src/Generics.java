@@ -8,7 +8,21 @@ import java.util.TreeMap;
 
 public class Generics {
 
+	int fakt(int n){
+		if(n==0 || n==1){
+			return 1;
+		}
+		//int temp = n * fakt(n-1);
+		int temp = n*fakt(n-1);
+		return temp;
+	}
+	
 	public static void main(String[] args) {
+		
+		Generics test = new Generics();
+		System.out.println(test.fakt(10));
+		
+		
 		Integer i1 = 5;
 		Integer i2 = 6;
 
@@ -82,6 +96,23 @@ public class Generics {
 		
 		System.out.println(map + " \n" + submap);
 		
+		//Generics methods
+		
+		Dog1[] dogs = {new Dog1(), new Dog1()};
+		Cat[] cats = {new Cat(), new Cat(), new Cat()};
+		Bird[] birds = {new Bird()};
+		AnimalDoctor doc = new AnimalDoctor();
+		doc.checkAnimals(dogs); // pass the Dog[]
+		doc.checkAnimals(cats); // pass the Cat[]
+		doc.checkAnimals(birds); // pass the Bird[]
+		
+		
+		
+		
+		List<Integer> myList = new ArrayList<Integer>();
+		myList.add(3);
+		Bar bar = new Bar();
+		bar.doInsert(myList);
 		
 		
 		
@@ -94,6 +125,46 @@ public class Generics {
 
 }
 
+class Bar {
+void doInsert(List<?> list) {
+//list.add(new Dog());
+System.out.println(list.get(0));
+}
+}
+
+abstract class Animal1 {
+	public abstract void checkup();
+}
+
+class Dog1 extends Animal1 {
+	public void checkup() {
+		// implement Dog-specific code
+		System.out.println("Dog checkup");
+	}
+}
+
+class Cat extends Animal1 {
+	public void checkup() {
+		// implement Cat-specific code
+		System.out.println("Cat checkup");
+	}
+}
+
+class Bird extends Animal1 {
+	public void checkup() {
+		// implement Bird-specific code
+		System.out.println("Bird checkup");
+	}
+}
+
+ class AnimalDoctor {
+	// method takes an array of any animal subtype
+	public void checkAnimals(Animal1[] animals) {
+		for (Animal1 a : animals) {
+			a.checkup();
+		}
+	}
+ }
 
 class Moof {
 	private int moofValue;

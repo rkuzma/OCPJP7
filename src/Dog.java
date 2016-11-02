@@ -10,7 +10,7 @@ class Animal {
     public void test() {};
 }
 
-public class Dog extends Animal {
+private class Dog extends Animal {
     public void eat() {System.out.println("Testing dog....");}
     public void test() {System.out.println("Testing dog test....");}
 //    public String doStuffa(String a) {a = a.concat(" ef h ");return a.trim();
