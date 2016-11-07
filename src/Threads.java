@@ -1,3 +1,5 @@
+import java.io.Closeable;
+import java.io.IOException;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -18,6 +20,7 @@ public class Threads {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        
 //        
         t2.start();
         
@@ -106,3 +109,4 @@ class NameList {
 	}
 }
 
+class E implements Closeable { public void close() {} }
