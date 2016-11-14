@@ -17,6 +17,29 @@ public class Generics {
 		return temp;
 	}
 	
+	public <T> void makeArrayList(T t) { // take an object of an
+		// unknown type and use a
+		// "T" to represent the type
+		List<T> list = new ArrayList<T>(); // now we can create the
+		// list using "T"
+		list.add(t);
+	}
+	
+	public <T> T returnArrayList(T t) { // take an object of an
+		// unknown type and use a
+		// "T" to represent the type
+		List<T> list = new ArrayList<T>(); // now we can create the
+		// list using "T"
+		list.add(t);
+		
+		return list.get(0);
+	}
+	
+//	void takeListOfStrings(List<String> strings) {
+//		strings.add(new Integer(42));     // NO!! strings is type safe
+//		}
+
+	
 	public static void main(String[] args) {
 		
 		Generics test = new Generics();
@@ -115,6 +138,17 @@ public class Generics {
 		bar.doInsert(myList);
 		
 		
+		List<Integer> myList1 = new ArrayList<Integer>();
+		myList1.add(4);
+		myList1.add(6);
+		Inserter in = new Inserter();
+		in.insert(myList1); // pass List<Integer> to legacy code
+		for (Integer i: myList1){
+			System.out.println(i);
+			
+		}
+
+		
 		
 	}
 	static class ReSortComparator implements Comparator<String> {
@@ -123,6 +157,14 @@ public class Generics {
 		}
 	}
 
+}
+
+class Inserter {
+	// method with a non-generic List argument
+	void insert(List list) {
+		list.add(new Integer(42)); // adds to the incoming list
+		list.add(new String("Hello"));
+	}
 }
 
 class Bar {
