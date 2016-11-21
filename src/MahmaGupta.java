@@ -24,6 +24,15 @@ public class MahmaGupta {
 		System.out.println(newString);
 		String newString2 = str.replaceAll("c.p\\b", "()"); //line4
 		System.out.println(newString2);
+		String[] tokens = str.split("c.p", 2);
+		System.out.println("---------------");
+		for (String token:tokens){
+		System.out.println(token);
+		}
+		float f4 = (float) 123.456789;
+		System.out.printf("%.4f",f4);
+		
+		System.out.println("");
 		
 		List<String> list = new ArrayList<>();
 		

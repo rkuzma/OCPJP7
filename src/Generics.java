@@ -148,6 +148,16 @@ public class Generics {
 			
 		}
 
+		List<String> colors = new ArrayList<>(); // create arraylist and assign it to List
+		colors.add("red");  // add elements to arraylist
+		colors.add("green");
+		colors.add("yellow");
+		colors.add("blue");
+		colors.add("maroon");
+		colors.add(" maroon");
+		colors.add("Maroon");
+		Collections.sort(colors); // sort the string elements alphabetically
+		System.out.println("sorted list" + colors);//print sorted arraylist
 		
 		
 	}
