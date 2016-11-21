@@ -1,3 +1,5 @@
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,7 +38,15 @@ public class MahmaGupta {
 		boolean b = false;
 		assert (b = true) : new Person();
 		
-		
+		Path path = Paths.get("/mydir/eWorld.java");
+		Path renamePath = path.resolveSibling(Paths.get("newWorld.java"));
+		Path copyPath = path.resolveSibling("backup/eWorld.java");
+		Path absolutePath = Paths.get("E:/OCPJavaSE7/");
+		System.out.println(renamePath);
+		System.out.println(copyPath);
+		System.out.println(path.resolveSibling(""));
+		System.out.println(absolutePath.resolveSibling(path));
+		System.out.println(path.resolveSibling(absolutePath));
 
 	}
 
