@@ -152,6 +152,9 @@ public class ch8 {
 		System.out.println(rb2.getString("ride.in") +" "+ rb2.getString("elevator"));
 		Locale.setDefault(initial);
 		
+		Locale loc3 = new Locale ("fren", "FRen");
+		System.out.println(loc3.getCountry());
+		
 	}
 }
 
